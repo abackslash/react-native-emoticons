@@ -3,9 +3,11 @@ import React from 'react-native';
 const {
     StyleSheet,
     Dimensions,
-    Platform
+    Platform,
+    PixelRatio
     } = React;
 const {height, width} = Dimensions.get('window');
+const pixelRatio = PixelRatio.get();
 
 const styles = StyleSheet.create({
     baseText: {
@@ -27,7 +29,7 @@ const styles = StyleSheet.create({
     },
     container: {
         backgroundColor: '#fff',
-        height: 300,
+        height: 235,
         width: width,
         position: 'absolute',
         bottom: 0,
@@ -35,12 +37,18 @@ const styles = StyleSheet.create({
     },
     emoji: {
         textAlign: 'center',
+        fontSize: 30,
+        lineHeight: 35,
+        color: '#rgba(0,0,0,1)'
+    },
+    emojiTab: {
+        textAlign: 'center',
         fontSize: 25,
         lineHeight: 30,
         color: '#rgba(0,0,0,1)'
     },
     emojiTouch:{
-        width: (width-30)/6,
+        width: (width-30)/8,
         height: 50,
         justifyContent: 'center',
         alignItems: 'center'
@@ -52,7 +60,7 @@ const styles = StyleSheet.create({
         width: width
     },
     scrollGroupTable: {
-        paddingBottom: 50
+        paddingBottom: 40
     },
     cateView: {
         flex: 1,
@@ -71,7 +79,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingBottom: 0,
         width: 60,
-        borderRightWidth: 1,
+        borderRightWidth: 1 / pixelRatio,
         borderColor: 'rgba(178,178,178,.3)',
         backgroundColor: '#fff'
     },
@@ -79,7 +87,7 @@ const styles = StyleSheet.create({
         height: 40,
         width: width,
         flexDirection: 'row',
-        borderWidth: 1,
+        borderWidth: 1 / pixelRatio,
         borderBottomWidth: 0,
         borderLeftWidth: 0,
         borderRightWidth: 0,
@@ -87,7 +95,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255,255,255,1)',
     },
     tabsDot: {
-        height: 40,
+        height: 30,
         width: width,
         flexDirection: 'row',
         borderWidth: 0,
